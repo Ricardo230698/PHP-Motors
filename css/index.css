@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
+html{
+    box-sizing: border-box;
+}
+   
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+/* -------------- HEADER ----------------- */
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#logo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+#logo img {
+    grid-column: 1/2;
+    justify-self: start;
+}
+
+#account {
+    grid-column: 2/3;
+    justify-self: end;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+#cookie {
+    justify-self: end;
+    padding-right: 20px;
+}
+
+/* -------------- NAV ----------------- */
+
+#nav_menu {
+    background-color: black;
+    list-style: none;
+    display: flex;
+    padding-left: 10px;
+}
+
+#nav_menu li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#nav_menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+#nav_menu li a:hover {
+    background-color: #4c96d7;
+    color: black;
+    padding: 13px 10px;
+}
+
+
+/* ------------- FIRST SECTION ----------------------- */
+
+#first {
+    position: relative;
+}
+
+#first h2 {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    color: blue;
+}
+
+#flotar {
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    color: blue;
+    font-weight: bold;
+}
+
+#main-auto {
+    padding-top: 30px;
+    max-width: 100%;
+}
+
+#main-btn {
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+    max-width: 50%;
+}
+
+
+/* ---------------- SECOND SECTION -------------------- */
+
+#reviews-list li{
+    padding-bottom: 1.2rem;
+}
+
+
+/* ---------------- THIRD SECTION -------------------- */
+
+#boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+#boxes h2 {
+    grid-column: 1/3;
+}
+
+#box-1 {
+    grid-column: 1/2;
+}
+
+#box-2 {
+    grid-column: 2/3;
+}
+
+#box-3 {
+    grid-column: 1/2;
+}
+
+#box-4 {
+    grid-column: 2/3;
+}
+
+#box-1 div, #box-2 div, #box-3 div, #box-4 div {
+    background-color: #4c96d7;
+    height: 5rem;
+    display: grid;
+    border: 1px solid black;
+}
+
+#box-1 img, #box-2 img, #box-3 img, #box-4 img {
+    display: block;
+    margin: auto;
+}
+
+#box-1 a, #box-2 a, #box-3 a, #box-4 a {
+    display: block;
+    text-align: center;
+}
+
+/* ------------------ FOOTER ----------------------- */
+
+footer {
+    text-align: center;
+    border-top: 6px solid #3a3a3a;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* ---------------- LOGIN & REGISTRATION VIEW -------------------- */
+
+form {
+    color: black;
+    background-color: #4c96d7;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 3px solid gray;
+    margin: 10px;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+form a {
+    color: black;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input {
+    margin-bottom: 15px;
+    width: 50%;
+}
+
+form button {
+    margin-bottom: 20px;
+    /*max-width: max-content;*/
+    padding: 8px 25px;
+}
+
+
+/* I added three rules specific to displaying the list of vehicles in our new vehicle classification view: */
+#inv-display {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+   
+#inv-display li {
+    margin-bottom: .5em;
+    border: 1px #ccc solid;
+    /* list-style-type: none; */
+    flex: 1 1 auto;
+}
+   
+#inv-display li img {
+    max-width: 100%;
+}
+
+/* VEHICLE-DETAIL VIEW */
+
+#details-display li {
+    display: flex;
+    flex-direction: column;
+    /* flex-shrink: 1; */
+}
+
+#details-display {
+    border: 1px solid black;
+    margin: 0 auto;
+    max-width: 80%;
+    padding: 15px;
+    background-color: #4c96d7;
+}
+
+#details-display li * {
+    /* background-color: #4c96d7; */
+    border: 1px black solid;
+    padding: 5px;
+    background-color: #ccc;
+}
+
+#details-grid {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
+}
+
+#thumbnail-display {
+    list-style: none;
+    padding: 0;
+    align-self: center;
+}
+
+/* #thummbnail-heading {
+    display: none;
+} */
+
+/* --------------- MEDIA QUERY ------------------------ */
+
+@media screen and (min-width: 800px) {
+    #details-display {
+        height: max-content;
+    }
+    
+    #details-display li {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: repeat(5, min-content);
+        grid-gap: 10px;
+        align-items: center;
+        /* height: 20%; */
+    }
+
+    #details-display li img {
+        grid-column: 1/2;
+        grid-row: 1/6;
+        overflow: hidden;
+        width: 100%;
+        
+    }
+
+    #details-display li h2 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        height: min-content;
+    }
+
+    #details-display li span:nth-of-type(1) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        height: min-content;
+    }
+
+    #details-display li span:nth-of-type(2) {
+        grid-column: 2/3;
+        grid-row: 3/4;
+        height: min-content;
+    }
+
+    #details-display li span:nth-of-type(3) {
+        grid-column: 2/3;
+        grid-row: 4/5;
+        height: min-content;
+    }
+
+    #details-display li span:nth-of-type(4) {
+        grid-column: 2/3;
+        grid-row: 5/6;
+        height: min-content;
+    }
+
+    #details-grid {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #thummbnail-heading {
+        display: none;
+    }
+
+    #thumbnail-display li img:hover {
+        width: 500px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    body {
+        background-image: url('/phpmotors/images/site/small_check.jpg');
+        
+    }
+
+    #content {
+        background-color: white;
+        max-width: 90%;
+        margin: 0 auto;
+        border: 4px solid #4c96d7;
+    }
+
+    #main-btn {
+        position: absolute;
+        top: 90px;
+        left: 25px;
+        /* color: #4c96d7; */
+        max-width: 25%;
+    }
+
+    #first h2 {
+        top: 0;
+        left: 25px;
+    }
+    
+    #flotar {
+        top: 30px;
+        left: 25px;
+    }
+
+    #main-auto {
+        display: block;
+        margin: auto;
+    }
+
+    #second {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        /* justify-items: stretch; */
+        margin: 0 50px;
+    }
+
+    #reviews {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        justify-self: center;
+    }
+
+    #boxes {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    /* -------------------------------------------------------- */
+    /* For vehicle display in classification view */
+	#inv-display {
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+	#inv-display h2{
+		font-size: 1rem;
+	}
+
+	#inv-display li {
+		max-width: 200px;
+		flex: 1 0 auto;
+		text-align: center;
+		height: 250px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+      
+	#inv-display div {
+		width: 100%;
+	}
+
+}
+
